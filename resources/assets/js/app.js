@@ -20,5 +20,24 @@ Vue.component("chat-log", require("./components/ChatLog.vue"));
 Vue.component("chat-composer", require("./components/ChatComposer.vue"));
 
 const app = new Vue({
-  el: "#app"
+  el: "#app",
+  data: {
+    messages: [
+      {
+        message: "hey",
+        user: "aman"
+      },
+      {
+        message: "yo",
+        user: "gay"
+      }
+    ]
+  },
+  methods: {
+    addMessage(message) {
+      //Add messages
+      this.messages.push(message);
+      //Data base stuff
+    }
+  }
 });
