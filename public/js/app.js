@@ -1427,6 +1427,11 @@ var app = new Vue({
       this.messages.push(message);
       //Data base stuff
     }
+  },
+  created: function created() {
+    axios.get("/messages").then(function (response) {
+      console.log(response);
+    });
   }
 });
 
@@ -45147,7 +45152,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.chat-message {\n  padding: 1rem;\n}\n.chat-message > p {\n  margin-bottom: 0.5rem;\n}\n", ""]);
 
 // exports
 
@@ -45313,7 +45318,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.chat-log .chat-message:nth-child(even) {\n  background-color: #cccccc;\n}\n.empty {\n  padding: 1rem;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -45324,6 +45329,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -45346,10 +45354,28 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "chat-log" },
-    _vm._l(_vm.messages, function(message) {
-      return _c("chat-message", { attrs: { message: message } })
-    }),
-    1
+    [
+      _vm._l(_vm.messages, function(message) {
+        return _c("chat-message", { attrs: { message: message } })
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.messages.length === 0,
+              expression: "messages.length === 0"
+            }
+          ],
+          staticClass: "empty"
+        },
+        [_vm._v("\n        Nothing here yet!\n    ")]
+      )
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -45448,7 +45474,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n.chat-composer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.chat-composer input {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 auto;\n          flex: 1 auto;\n}\n.chat-composer button {\n  border-radius: 0;\n}\n", ""]);
+exports.push([module.i, "\n.chat-composer {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.chat-composer input {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 auto;\n          flex: 1 auto;\n  padding: 0.5rem 1rem;\n}\n.chat-composer button {\n  border-radius: 0;\n}\n", ""]);
 
 // exports
 

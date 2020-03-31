@@ -39,5 +39,10 @@ const app = new Vue({
       this.messages.push(message);
       //Data base stuff
     }
+  },
+  created() {
+    axios.get("/messages").then(response => {
+      this.messages = response.data;
+    });
   }
 });
