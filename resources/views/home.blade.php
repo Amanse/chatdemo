@@ -14,8 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                    <a href="{{ route('chat') }}" class="btn  btn-primary"></a>
+                    <a href="{{ url('chat') }}" class="btn  btn-primary">Chat</a>
                 </div>
             </div>
         </div>
