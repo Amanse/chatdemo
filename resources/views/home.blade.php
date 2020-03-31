@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="{{ route('chat') }}" class="btn  btn-primary"></a>
                 </div>
             </div>
         </div>
